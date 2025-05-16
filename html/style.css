@@ -1,0 +1,129 @@
+:root {
+  --primary-clr: #00cc64;
+  --bg-clr: white;
+  --text-clr: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "AlteHaasGrotesk";
+  src: url("/fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlteHaasGrotesk";
+  src: url("/fonts/AlteHaasGroteskBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Junicode";
+  src: url("/fonts/Junicode-BoldItalicCondensed.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: condensed;
+}
+
+/* improve line wrapping */
+p {
+  text-wrap: pretty;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 8rem;
+  line-height: 0.8;
+  padding-inline-end: 2rem;
+  max-width: 6ch;
+}
+
+h2 {
+  font-size: 3.052rem;
+  color: var(--primary-clr);
+}
+
+h3 {
+  font-size: 2.441rem;
+}
+
+h4 {
+  font-size: 1.953rem;
+}
+
+h5 {
+  font-size: 1.563rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+body {
+  font-family: "AlteHaasGrotesk", Arial, Helvetica, sans-serif;
+  color: var(--text-clr);
+  min-height: 100vh;
+  padding: 3rem 2rem;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr 1fr;
+}
+
+/*.heading p {
+  border-inline-start: 5px solid var(--text-clr);
+  padding-inline-start: 1rem;
+   margin-block: 1rem;
+  padding-block: 0.75rem;
+  }*/
+
+.heading p {
+  height: min-content;
+  grid-column: 2/5;
+  width: 30ch;
+  color: var(--primary-clr);
+  border-inline-start: 3px solid var(--text-clr);
+  padding-inline-start: 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.colors-grid {
+  border-top: 3px solid var(--text-clr);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.color-card {
+  min-height: 30vh;
+  background-color: coral;
+  padding: 1rem 1rem;
+}
+
+#color-code {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.color-card:hover #color-code {
+  opacity: 1;
+}
