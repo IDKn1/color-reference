@@ -1,0 +1,185 @@
+:root {
+    --text-clr: #433;
+    --accent-clr: #c6ad92;
+    --primary-clr: #fe3519;
+    --bg-clr: #f4f3f0;
+
+    --grid-columns: 12;
+    --grid-gutter: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* --- Font Sizes --- */
+:root {
+    /* below the base */
+    --font-size-2b: 0.625rem;
+    --font-size-1b: 0.8125rem;
+
+    /* the base */
+    --font-size: 1rem;
+
+    /* above the base */
+    --font-size-1: 1.25rem;
+    --font-size-2: 1.5625rem;
+    --font-size-3: 2rem;
+    --font-size-4: 2.5rem;
+    --font-size-5: 3.1875rem;
+    --font-size-6: 4rem;
+}
+
+/* --- Line Heights --- */
+
+:root {
+    /* below the base */
+    --line-height-2b: 2;
+    --line-height-1b: 1.5385;
+
+    /* the base */
+    --line-height: 1.5;
+
+    /* above the base */
+    --line-height-1: 1.4;
+    --line-height-2: 1.28;
+    --line-height-3: 1.25;
+    --line-height-4: 1.2;
+    --line-height-5: 1.1765;
+    --line-height-6: 1.125;
+}
+
+/* --- Letter Spacings --- */
+
+:root {
+    /* below the base */
+    --letter-space-2b: 0.074em;
+    --letter-space-1b: 0.05em;
+
+    /* the base */
+    --letter-space: 0.035em;
+
+    /* above the base */
+    --letter-space-1: 0.022em;
+    --letter-space-2: 0.0116em;
+    --letter-space-3: 0.0025em;
+    --letter-space-4: -0.004em;
+    --letter-space-5: -0.0096em;
+    --letter-space-6: -0.0137em;
+}
+
+body {
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-space);
+    color: var(--text-clr);
+}
+
+p {
+    margin-block: 1.5rem;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-space);
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
+    letter-spacing: var(--letter-space-3);
+}
+
+h2,
+h3 {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
+    letter-spacing: var(--letter-space-2);
+}
+
+h4,
+h5,
+h6 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--letter-space-1);
+}
+
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    src: url("/fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    src: url("/fonts/AlteHaasGroteskBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: "Alte Haas Grotesk", Arial, Helvetica, sans-serif;
+    color: var(--text-clr);
+    min-height: 100vh;
+    padding: 3rem 2rem;
+}
+
+h1 {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-6);
+    letter-spacing: var(--letter-space-6);
+}
+
+.heading p {
+    max-width: 60ch;
+    color: var(--primary-clr);
+    font-size: var(--font-size-2);
+}
+
+.colors-grid {
+    border-top: 3px solid var(--text-clr);
+    margin-top: 4rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.color-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
+}
+
+.color-card {
+    flex: 1 1 50px;
+    max-height: 20dvh;
+    max-width: 250px;
+    aspect-ratio: 1 / 1; /* perfect square swatches */
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#color-code {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.color-card:hover #color-code {
+    opacity: 1;
+}

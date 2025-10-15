@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Reference</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Color Reference</h1>
+            <p>
+                A collection of colors I've found around the internet that I
+                want to save for later use
+            </p>
+        </div>
+
+        <div class="colors-grid">
+            {% for categoryPair in colors %}
+                {% assign categoryName = categoryPair[0] %}
+                {% assign colorGroup = categoryPair[1] %}
+
+                <div class="color-category">
+                    <h2>{{ categoryName | capitalize }}</h2>
+
+                    <div class="color-row">
+                        {% for colorPair in colorGroup %}
+                            {% assign color = colorPair[1] %}
+
+                            {% assign textColor = color.colorCode
+                                | brightness
+                            %}
+
+                            {% render 'colorCard.liquid',
+                                code: color.colorCode,
+                                text: textColor
+                            %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <script src="/main.js"></script>
+    </body>
+</html>

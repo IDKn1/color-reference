@@ -1,0 +1,15 @@
+{% if text == 'black' %}
+    {% assign textColor = 'black' %}
+{% elsif text == 'white' %}
+    {% assign textColor = 'white' %}
+{% else %}
+    {% assign textColor = 'inherit' %}
+{% endif %}
+
+<div
+    class="color-card"
+    style="background-color:#{{ code }}; color: {{ textColor }};"
+    onclick="copyHexCode()"
+>
+    <div id="color-code">{{ code }}</div>
+</div>

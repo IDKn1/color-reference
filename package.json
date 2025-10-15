@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "pug": "^3.0.3"
+    "@11ty/eleventy-fetch": "^5.1.0"
   }
 }
