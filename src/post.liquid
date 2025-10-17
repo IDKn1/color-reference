@@ -1,0 +1,33 @@
+<h1>Post form</h1>
+<form id="form">
+    <select name="color" id="colorCat">
+        <option value="red">red</option>
+        <option value="orange">orange</option>
+        <option value="yellow">yellow</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="purple">purple</option>
+        <option value="white">white</option>
+        <option value="black">black</option>
+    </select>
+    <input type="color" name="colorCode">
+    <button type="submit">Submit</button>
+</form>
+<script>
+    const formEl = document.getElementById('form');
+    formEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formdata = new FormData(formEl);
+        const data = JSON.stringify(Object.fromEntries(formdata));
+        console.log(data);
+
+        fetch('https://n-s.work/api/debug', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        });
+    });
+</script>

@@ -2,6 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "color-reference",
   "compatibility_date": "2025-10-11",
+  "routes": [
+    {
+      "pattern": "colors.n-s.work",
+      "custom_domain": true,
+    },
+  ],
   "assets": {
     "directory": "./dist",
   },
