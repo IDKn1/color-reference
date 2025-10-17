@@ -24,15 +24,13 @@
                     <h2>{{ categoryName | capitalize }}</h2>
 
                     <div class="color-row">
-                        {% for colorPair in colorGroup %}
+                        {% for color in colorGroup %}
                             {% assign color = colorPair[1] %}
 
-                            {% assign textColor = color.colorCode
-                                | brightness
-                            %}
+                            {% assign textColor = color | brightness %}
 
                             {% render 'colorCard.liquid',
-                                code: color.colorCode,
+                                code: color,
                                 text: textColor
                             %}
                         {% endfor %}
