@@ -15,6 +15,7 @@ module.exports = function (eleventyConfig) {
       output: "dist",
       includes: "_includes", // relative to input
     },
+
     templateFormats: ["liquid", "html"],
     htmlTemplateEngine: "liquid",
     markdownTemplateEngine: "liquid",

@@ -4,8 +4,8 @@
   "compatibility_date": "2025-10-11",
   "routes": [
     {
-      "pattern": "*n-s.work/colors/*",
-      "zone_name": "n-s.work",
+      "pattern": "colors.n-s.work",
+      "custom_domain": true,
     },
   ],
   "assets": {
