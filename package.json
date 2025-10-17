@@ -1,5 +1,16 @@
 {
+  "name": "color-reference",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
   "dependencies": {
     "@11ty/eleventy-fetch": "^5.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.43.0"
   }
 }
