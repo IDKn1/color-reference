@@ -1,1 +1,66 @@
-<h1>Hello this is the main page</h1>
+{% layout 'base.liquid' %}
+{% block content %}
+<div class="grid">
+    <div class="hero">
+        <h1>
+            Hello this is the landing page for all the online tools I have
+            developed!
+        </h1>
+        <ul>
+            <li class="fs-1"><a href="/invoice">Invoice generator</a></li>
+            <li class="fs-1"><a href="/colors">Color hexcode reference</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    .grid {
+        align-items: center;
+        padding: var(--grid-gutter);
+        min-height: 100dvh;
+    }
+    .hero {
+        display: flex;
+        flex-direction: column;
+        grid-column: 4/10;
+    }
+
+    h1 {
+        text-wrap: auto;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: var(--grid-gutter);
+        padding-inline: 0;
+        padding-block: var(--grid-gutter);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary-clr);
+        transition: all 0.25s ease-in;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: var(--text-clr);
+    }
+
+    @media (max-width: 800px) {
+        .grid {
+            align-items: start;
+        }
+        .hero {
+            grid-column: 1/13;
+        }
+
+        ul {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}

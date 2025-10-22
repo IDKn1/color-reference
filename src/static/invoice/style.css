@@ -4,11 +4,6 @@ h1 {
     padding-inline-end: 2rem;
 }
 
-body {
-    background-color: var(--bg-clr);
-    min-height: 100vh;
-}
-
 p {
     margin: initial;
 }

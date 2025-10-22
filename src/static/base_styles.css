@@ -103,6 +103,12 @@
     --letter-space-6: -0.0137em;
 }
 
+html,
+body {
+    background-color: var(--bg-clr);
+    min-height: 100vh;
+}
+
 p {
     margin-block: 1.5rem;
     font-size: var(--font-size);
