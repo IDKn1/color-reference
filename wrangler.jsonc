@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tools",
+  "name": "color-reference",
   "compatibility_date": "2025-10-11",
   "routes": [
     {
