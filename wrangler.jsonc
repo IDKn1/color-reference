@@ -1,13 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tools",
+  "name": "webtools",
   "compatibility_date": "2025-10-11",
-  "routes": [
-    {
-      "pattern": "tools.n-s.work",
-      "custom_domain": true,
-    },
-  ],
+  // "routes": [
+  //   {
+  //     "pattern": "tools.n-s.work",
+  //     "custom_domain": true,
+  //   },
+  // ],
   "build": {
     "command": "npx @11ty/eleventy",
   },

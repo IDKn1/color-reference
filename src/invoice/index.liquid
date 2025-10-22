@@ -1,0 +1,133 @@
+---
+title: "Invoice Generator"
+---
+{% layout 'base.liquid' %}
+
+{% block style %}
+
+<link rel="stylesheet" href="style.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+{% endblock %}
+
+{% block content %}
+<!-- 850px is portrait letter print width -->
+<!-- and 1090px for landscape letter -->
+<div id="invoice">
+    <div class="heading grid">
+        <h1>
+            Nikolai Suvanto
+            <div class="contact">
+                <p id="email-value">email(at)email.com</p>
+                <p id="phone-value">(xxx) xxx xxxx</p>
+            </div>
+        </h1>
+        <div class="invoice-text">
+            <h4 class="label">Invoice #</h4>
+            <p class="fs-2 fw-bop class="fs-1 fw-bold" id="invoice-number">00000p>
+        </div>
+    </div>
+    <div class="subheading grid">
+        <div class="client-details">
+            <p>Client</p>
+            <p class="fs-2 fw-bold" id="company-name">COMPANY NAME</p>
+            <p class="fs-1 fw-bold" id="client-name">CLIENT NAME</p>
+            <p class="fs-1 fw-bold" id="client-email">CLIENT@EMAIL</p>
+            <p id="client-location">LOCATION</p>
+        </div>
+        <div class="date">
+            <p>Date</p>
+            <p class="fs-2 fw-bold" id="date"></p>
+        </div>
+    </div>
+    <div id="item-list">
+        <div class="item grid">
+            <p class="item-desc-label">description</p>
+            <p class="item-qty-label">qty/hr</p>
+            <p class="item-amount-label">rate</p>
+            <p class="item-total-label">total</p>
+        </div>
+    </div>
+    <div class="total-row grid">
+        <div class="payment-details">
+            <p>Invoice payable through E-Transfer to</p>
+            <p id="payment-details"></p>
+        </div>
+        <div class="total-list">
+            <div class="cost">
+                <p>price</p>
+                <p class="fs-1" id="cost-value">0</p>
+            </div>
+            <div class="tax">
+                <p>tax</p>
+                <p class="fs-1" id="tax-value">0</p>
+            </div>
+            <div class="paid">
+                <p>paid</p>
+                <p class="fs-1" id="paid-value">0</p>
+            </div>
+            <div class="total">
+                <p>amount due</p>
+                <p class="fs-4 fw-bold" id="total-value">0</p>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="modal-btn" id="modal-toggle-btn-item" type="button">
+    <i class="fa-solid fa-plus"></i>
+</button>
+<div class="modal" id="add-item-modal" style="display: none;">
+    <form id="item-form">
+        <input id="item-desc" type="text" placeholder="Description">
+        <input id="item-qty" type="text" placeholder="Quantity/Hours">
+        <input id="item-rate" type="text" placeholder="Rate">
+        <button type="submit">Add Item</button>
+    </form>
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<button class="modal-btn" id="modal-toggle-btn-info" type="button">
+    <i class="fa-regular fa-rectangle-list"></i>
+</button>
+<div class="modal" id="info-modal" style="display: none;">
+    <div class="contact-info">
+        <label for="email">email</label>
+        <input id="email" type="text" name="email">
+        <label for="phoneNumber">phone</label>
+        <input id="phone" type="text" name="phoneNumber">
+    </div>
+    <div class="invoice-number">
+        <label for="invoiceNumber">invoice number</label>
+        <input id="invoiceNumber" type="text" name="invoiceNumber">
+    </div>
+    <form id="client-form">
+        <label for="companyName">company name</label>
+        <input id="companyName" type="text" name="companyName">
+        <label for="clientName">client name</label>
+        <input id="clientName" type="text" name="clientName">
+        <label for="clientEmail">client email</label>
+        <input id="clientEmail" type="text" name="clientEmail">
+        <label for="clientLocation">client location</label>
+        <input id="clientLocation" type="text" name="clientLocation">
+    </form>
+    <div class="total-settings">
+        <div class="tax-rate">
+            <label for="taxed">tax?</label>
+            <input id="taxed" type="checkbox" name="taxed">
+        </div>
+        <div class="amount-paid">
+            <label for="paidAmount">amount already paid</label>
+            <input id="amountPaid" type="text" name="paidAmount">
+        </div>
+    </div>
+    <button class="modal-close" type="button">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button onclick="savePDF();">Download as PDF</button>
+</div>
+<script src="main.js"></script>
+<script src="items.js"></script>
+<script src="details.js"></script>
+<script src="modal.js" type="module"></script>
+{% endblock %}

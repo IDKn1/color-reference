@@ -157,6 +157,10 @@ h6 {
     gap: var(--grid-gutter);
 }
 
+.fw-bold {
+    font-weight: 800;
+}
+
 .fs-1 {
     font-size: var(--font-size-1);
     line-height: var(--line-height-1);
