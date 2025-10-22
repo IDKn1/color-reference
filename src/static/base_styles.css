@@ -1,0 +1,200 @@
+:root {
+    /*--primary-clr: #00cc63;*/
+    --primary-clr: #fe3519;
+
+    /*--accent-clr: #c6ad92;*/
+
+    /*--text-clr: #333333;*/
+    --text-clr: #433;
+
+    --bg-clr: #f4f3f0;
+
+    --grid-columns: 12;
+    --grid-gutter: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    src: url("/fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    src: url("/fonts/AlteHaasGroteskBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Junicode";
+    src: url("/fonts/JunicodeVF-Italic.woff2") format("woff2");
+    font-stretch: 87.5%;
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FiraCodeNFM";
+    src: url("/fonts/FiraCodeNerdFontMono-Retina.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* --- Font Sizes --- */
+:root {
+    /* below the base */
+    --font-size-2b: 0.625rem;
+    --font-size-1b: 0.8125rem;
+
+    /* the base */
+    --font-size: 1rem;
+
+    /* above the base */
+    --font-size-1: 1.25rem;
+    --font-size-2: 1.5625rem;
+    --font-size-3: 2rem;
+    --font-size-4: 2.5rem;
+    --font-size-5: 3.1875rem;
+    --font-size-6: 4rem;
+}
+
+/* --- Line Heights --- */
+
+:root {
+    /* below the base */
+    --line-height-2b: 2;
+    --line-height-1b: 1.5385;
+
+    /* the base */
+    --line-height: 1.5;
+
+    /* above the base */
+    --line-height-1: 1.4;
+    --line-height-2: 1.28;
+    --line-height-3: 1.25;
+    --line-height-4: 1.2;
+    --line-height-5: 1.1765;
+    --line-height-6: 1.125;
+}
+
+/* --- Letter Spacings --- */
+
+:root {
+    /* below the base */
+    --letter-space-2b: 0.074em;
+    --letter-space-1b: 0.05em;
+
+    /* the base */
+    --letter-space: 0.035em;
+
+    /* above the base */
+    --letter-space-1: 0.022em;
+    --letter-space-2: 0.0116em;
+    --letter-space-3: 0.0025em;
+    --letter-space-4: -0.004em;
+    --letter-space-5: -0.0096em;
+    --letter-space-6: -0.0137em;
+}
+
+p {
+    margin-block: 1.5rem;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-space);
+}
+
+body {
+    font-size: 16px;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-space);
+    color: var(--text-clr);
+    font-family: "Alte Haas Grotesk", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
+    letter-spacing: var(--letter-space-3);
+}
+
+h2,
+h3 {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
+    letter-spacing: var(--letter-space-2);
+}
+
+h4,
+h5,
+h6 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--letter-space-1);
+}
+
+/* utiliy classes */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: var(--grid-gutter);
+}
+
+.fs-1 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--letter-space-1);
+}
+
+.fs-1b {
+    font-size: var(--font-size-1b);
+    line-height: var(--line-height-1b);
+    letter-spacing: var(--letter-space-1b);
+}
+
+.fs-2 {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
+    letter-spacing: var(--letter-space-2);
+}
+
+.fs-3 {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
+    letter-spacing: var(--letter-space-3);
+}
+
+.fs-4 {
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
+    letter-spacing: var(--letter-space-4);
+}
+
+.fs-5 {
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+    letter-spacing: var(--letter-space-5);
+}
+
+.fs-6 {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-6);
+    letter-spacing: var(--letter-space-6);
+}

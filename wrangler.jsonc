@@ -1,10 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "color-reference",
+  "name": "tools",
   "compatibility_date": "2025-10-11",
   "routes": [
     {
-      "pattern": "colors.n-s.work",
+      "pattern": "tools.n-s.work",
       "custom_domain": true,
     },
   ],
