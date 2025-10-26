@@ -155,6 +155,17 @@ h6 {
     letter-spacing: var(--letter-space-1);
 }
 
+a {
+    color: var(--text-clr);
+    text-decoration: none;
+    transition: color 0.2s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: var(--primary-clr);
+}
+
 /* utiliy classes */
 
 .grid {
