@@ -103,7 +103,6 @@
     --letter-space-6: -0.0137em;
 }
 
-html,
 body {
     background-color: var(--bg-clr);
     min-height: 100vh;
