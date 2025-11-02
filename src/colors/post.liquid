@@ -1,8 +1,8 @@
 {% layout 'base.liquid' %}
 
 {% block content %}
-<h1>Post form</h1>
-<form id="form">
+<h1>Add a color</h1>
+<form id="postForm">
     <select name="color" id="colorCat">
         <option value="red">red</option>
         <option value="orange">orange</option>
@@ -16,17 +16,38 @@
     <input type="color" name="colorCode">
     <button type="submit">Submit</button>
 </form>
+
+<h1>Remove a color</h1>
+<form id="delForm">
+    <input type="text" name="colorCode">
+    <button type="submit">Submit</button>
+</form>
 <script>
-    const formEl = document.getElementById('form');
-    formEl.addEventListener('submit', (e) => {
+    const postFormEl = document.getElementById('postForm');
+    const delFormEl = document.getElementById('delForm');
+    postFormEl.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const formdata = new FormData(formEl);
+        const formdata = new FormData(postFormEl);
         const data = JSON.stringify(Object.fromEntries(formdata));
-        console.log(data);
 
         fetch('https://tools.n-s.work/api/colors', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        });
+    });
+
+    delFormEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formdata = new FormData(delFormEl);
+        const data = JSON.stringify(Object.fromEntries(formdata));
+
+        fetch('https://tools.n-s.work/api/colors', {
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             },
